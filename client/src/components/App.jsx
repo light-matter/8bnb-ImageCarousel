@@ -1,9 +1,24 @@
 import React from 'react';
 
-class App extends from React.Component{
+class App extends React.Component{
   constructor(props) {
-    super(props);
-    this.state = {};
+    super(props)
+    this.state = {}
+  }
+
+  componentDidMount() {
+    axios.get('/homes')
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
   }
 
   render() {
