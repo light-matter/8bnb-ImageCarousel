@@ -7,7 +7,7 @@ class App extends React.Component{
     this.state = {}
   }
 
-  componentDidMount() {
+  getHomes() {
     axios.get('/homes')
       .then(function (response) {
         // handle success
@@ -20,6 +20,10 @@ class App extends React.Component{
       .finally(function () {
         // always executed
       });
+  }
+
+  componentDidMount() {
+    this.getHomes();
   }
 
   render() {

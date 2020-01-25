@@ -11,14 +11,15 @@ db.once('open', function() {
 var carouselSchema = new mongoose.Schema({
   listingId: Number,
   homes: [{
-          homeId:  Number, // Number for one of 10 similar homes, ids 1-10
-          numberOfBeds: Number,
-          body: String,
-          price: Number,
-          rating: Number,
-          numberOfRatings: Number,
-          images: [String],
-          heart: Boolean,
+      homeId:  Number, // Number for one of 10 similar homes, ids 1-10
+      numberOfBeds: Number, //Number of beds
+      type: String, //type of home (ie entire cotttage, entire apartment)
+      body: String, //Description of the similar home
+      price: Number, //price per night
+      rating: Number, //rating of the home
+      numberOfRatings: Number, //number of ratings
+      images: [String], //image array of home
+      heart: Boolean, //favorite icon
   }]
 
 });
@@ -42,6 +43,9 @@ var Carousel = mongoose.model('Carousel', carouselSchema);
 // })
 
 // CarouselOne.save();
+
+
+//Carousel.create()
 
 const getHomes = (callback) => {
   Carousel.find((err,homes)=> {
