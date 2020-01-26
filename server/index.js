@@ -1,7 +1,7 @@
 const express = require('express')
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const {getHomes} = require('./db.js');
+const {getHomes} = require('../database/db.js');
 const app = express()
 const port = 3000
 

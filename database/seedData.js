@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 var {Carousel} = require('./db.js');
 
 
-mongoose.connect('mongodb://localhost/homes');
-// console.log('what is carousel', Carousel);
+mongoose.connect('mongodb://localhost/homes', {useNewUrlParser: true, useUnifiedTopology:true});
 
 const seedData = (num) => {
 
@@ -17,7 +16,7 @@ const seedData = (num) => {
 
   for(var j = 0; j < Math.floor(Math.random() * 5) + 5; j++) {
     //faker.image.imageUrl
-    images.push('imagestring')
+    images.push(faker.image.imageUrl());
   }
 
   //Heart toggle either true of false
@@ -57,7 +56,7 @@ const seedData = (num) => {
 
   }
 
-  seedData(5);
+  seedData(100);
 
 
   module.exports = {seedData}
