@@ -1,36 +1,23 @@
 const faker = require('faker');
-const {Carousel} = require('./db.js');
-const seedData = (num) => {
-  //Number of similar homes is between 5-10, with respective ids.
-  var homeId = Math.floor(Math.random() * 5) + 5;
+const mongoose = require('mongoose');
+var {Carousel} = require('./db.js');
 
-  //numberofBeds between 1-6. //Math.floor(Math.random() * (max-min)) + min
-  var randomBeds = Math.floor(Math.random() * 5) + 1
+
+mongoose.connect('mongodb://localhost/homes');
+// console.log('what is carousel', Carousel);
+
+const seedData = (num) => {
 
   //formType(type is a reserved word in mongoose)
   var formTypes = ['Entire cottage, Entire apartment, Entire House, Private Room, Shared Room']
-  var randomNumType = Math.floor(Math.random() * formTypes.length);
-  var formType = formTypes[randomNumType];
 
-  //body
-  var body = faker.random.words();
-
-  //price between 60-300
-  var price = (Math.random() * 240 + 60).toFixed(2);
-
-  //rating of home : 1 - 10
-  var rating = Math.floor(Math.random() * 4) + 1;
-
-  //num of Ratings = random number from 0 -1000
-  var numOfRatings = Math.floor(Math.random() * 1000);
-
-  //generate random int between 2 and 10
-  var randImgNum = Math.floor(Math.random()*10) + 2;
   //image stores the number of images for each similar home
   var images = [];
 
-  for(var j = 0; j < randImgNum; j++) {
-    images.push(faker.image.image)
+
+  for(var j = 0; j < Math.floor(Math.random() * 5) + 5; j++) {
+    //faker.image.imageUrl
+    images.push('imagestring')
   }
 
   //Heart toggle either true of false
@@ -38,26 +25,27 @@ const seedData = (num) => {
 
   //similarHomes = array of similarHome.
   var similarHomes= [];
-  var similarHome = {
-    homeId:  homeId,
-    numberOfBeds: randomBeds,
-    formType: formType,
-    body: body,
-    rating: rating,
-    numberOfRatings: numOfRatings,
-    images: images,
-    heart: heart,
-  }
-
-  for(var k = 0; k < homeId; k++) {
+  //10 similar homes
+  for(var k = 0; k < 10; k++) {
+    var similarHome = {
+      homeId:  Math.floor(Math.random() * 5) + 5,
+      numberOfBeds: Math.floor(Math.random() * 5) + 1,
+      formType: formTypes[Math.floor(Math.random() * formTypes.length)],
+      body: faker.random.words(),
+      price: (Math.random() * 240 + 60).toFixed(2),
+      rating: Math.floor(Math.random() * 4) + 1,
+      numberOfRatings: Math.floor(Math.random() * 1000),
+      images: images,
+      heart: Math.random() >= 0.5,
+    }
     similarHomes.push(similarHome);
   }
 
   for(var i = 0; i < num; i++) {
-    const carousel = new Carousel({
-      listingId: i,
-      homes: similarHomes
-    })
+    var carousel = new Carousel({
+        listingId: i,
+        homes: similarHomes
+      })
     carousel.save(err => {
       if(err) {
         console.log(err);
@@ -68,7 +56,6 @@ const seedData = (num) => {
   }
 
   }
-
 
   seedData(5);
 
