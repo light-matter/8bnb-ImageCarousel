@@ -11,6 +11,8 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
     "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage --colors",
     "seed": "node database/seedData.js"
   },
   "dependencies": {
