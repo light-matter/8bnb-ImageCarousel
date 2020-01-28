@@ -1,9 +1,9 @@
 import React from 'react';
 
-var SimilarHome = ({similarHome}) => (
+var SimilarHome = ({url}) => (
   <span>
 
-  <img src = {similarHome.images[0]} height="150" width="150"/>
+  <img src = {url} height="250" width="350"/>
 
   </span>
 )
