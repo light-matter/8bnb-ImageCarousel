@@ -1,13 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import Carousel from './Carousel.jsx';
+import SimilarHomes from './SimilarHomes.jsx';
 
 class App extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      // carousels: []
-      image: ''
+      homes: []
     }
     // console.log(this.state.image);
   }
@@ -16,11 +15,11 @@ class App extends React.Component{
     axios.get('/homes')
       .then(response => {
         // handle success
-        // console.log(response.data);
-        console.log(response.data[0].homes[0].images[0]);
+        console.log(response.data[0].homes);
+        // console.log(response.data[0].homes[0].images[0]);
         this.setState({
-          // carousel: response.data[0].homes;
-          image: response.data[0].homes[0].images[0]
+          homes: response.data[0].homes
+          // image: response.data[0].homes[0].images[0]
         })
       })
       .catch(function (error) {
@@ -39,9 +38,7 @@ class App extends React.Component{
   render() {
     return(
       <div>
-
-        <Carousel imgUrl={this.state.image}/>
-
+        <SimilarHomes similarHomes={this.state.homes}/>
       </div>
     )
   }
