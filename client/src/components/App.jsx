@@ -37,9 +37,9 @@ class App extends React.Component{
 
   render() {
     return(
-      <div>
+      <span>
         <SimilarHomes similarHomes={this.state.homes}/>
-      </div>
+      </span>
     )
   }
 }
