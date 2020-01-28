@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
-const Promise = require('bluebird');
 // var {seedData} = require('./seedData.js');
 mongoose.connect('mongodb://localhost/homes', {useNewUrlParser: true, useUnifiedTopology:true});
 
@@ -44,5 +43,5 @@ const getHomes = (callback) => {
 }
 
 
-module.exports.getHomes = Promise.promisify(getHomes);
-module.exports.Carousel = Promise.promisify(Carousel);
+
+module.exports = {Carousel, getHomes}
