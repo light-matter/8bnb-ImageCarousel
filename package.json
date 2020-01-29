@@ -13,6 +13,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage --colors",
+    "test:verbose": "jest --verbose --coverage",
     "seed": "node database/seedData.js"
   },
   "dependencies": {
