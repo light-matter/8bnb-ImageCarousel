@@ -38,11 +38,26 @@ class SimilarHome extends React.Component{
     return(
       <div className = "similarHome">
 
-      <Arrow direction = "left" handleSubmit = {this.previousSlide} glyph = "&#9664;" />
+      <span>
 
-      <img src = {this.props.similarHome.images[this.state.currentImgIdx]} height = '250' width = '350'></img>
+        <Arrow direction = "left" handleSubmit = {this.previousSlide} glyph = "&#9664;" />
 
-      <Arrow direction = "right" handleSubmit = {this.nextSlide} glyph="&#9654;"/>
+      </span>
+
+      <span>
+
+        <img src = {this.props.similarHome.images[this.state.currentImgIdx]} height = '250' width = '350'></img>
+
+      </span>
+
+
+      <span>
+
+        <Arrow direction = "right" handleSubmit = {this.nextSlide} glyph="&#9654;"/>
+
+      </span>
+
+
 
       </div>
     )
