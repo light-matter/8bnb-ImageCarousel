@@ -26,7 +26,6 @@ describe('<App/>', () => {
         });
       })
       .catch(function (error) {
-        console.log(error);
       });
     expect(wrapper.state('homes')).toBeDefined();
   });
@@ -37,7 +36,7 @@ describe('<App/>', () => {
     expect(App.prototype.componentDidMount.mock.calls.length).toBe(1);
   });
 
-  
+
 
 
 });
