@@ -11,6 +11,6 @@ describe('checks if App is rendering properly', function() {
     const wrapper = shallow(<App />);
     // console.log(wrapper.debug());
   });
-
+  
 
 });
