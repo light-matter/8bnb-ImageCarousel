@@ -1,5 +1,21 @@
 import React from 'react';
 import Arrow from './Arrow.jsx';
+import styled from 'styled-components';
+
+const ImgDiv = styled.div`
+  background-image: url(${props => props.image});
+  background-size: cover;
+  height: 250px;
+  width: 350px;
+  margin-left: 10px;
+`;
+
+const StyledArrow = styled(Arrow)`
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+`;
 
 class SimilarHome extends React.Component {
   constructor(props) {
@@ -36,30 +52,15 @@ class SimilarHome extends React.Component {
 
   render() {
     return (
-      <div className = "similarHome">
+      <ImgDiv image={this.props.similarHome.images[this.state.currentImgIdx]}>
 
-        <span>
+        <Arrow direction = "left" handleSubmit = {this.previousSlide} glyph = "&#9664;" />
 
-          <Arrow direction = "left" handleSubmit = {this.previousSlide} glyph = "&#9664;" />
+        {/*<img src = {this.props.similarHome.images[this.state.currentImgIdx]} height = '250' width = '350'></img>*/}
 
-        </span>
+        <Arrow direction = "right" handleSubmit = {this.nextSlide} glyph="&#9654;"/>
 
-        <span>
-
-          <img src = {this.props.similarHome.images[this.state.currentImgIdx]} height = '250' width = '350'></img>
-
-        </span>
-
-
-        <span>
-
-          <Arrow direction = "right" handleSubmit = {this.nextSlide} glyph="&#9654;"/>
-
-        </span>
-
-
-
-      </div>
+      </ImgDiv>
     );
   }
 
