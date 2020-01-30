@@ -3,11 +3,11 @@ import SimilarHome from './SimilarHome.jsx';
 
 const SimilarHomes = ({similarHomes}) => (
 
-  similarHomes.map((similarHome,i) =>
+  similarHomes.map((similarHome, i) =>
     <SimilarHome similarHome={similarHome} key={i}/>
   )
 
-)
+);
 
 
-export default SimilarHomes
+export default SimilarHomes;
