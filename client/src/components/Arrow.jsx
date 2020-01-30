@@ -28,7 +28,7 @@ const Button = styled.button`
 `;
 
 const Arrow = ({ direction, handleSubmit }) => (
-  <Button onClick={handleSubmit} direction={direction}>
+  <Button className = "arrow" onClick={handleSubmit} direction={direction}>
     {direction === 'left' ? <LeftArrow /> : <RightArrow />}
   </Button>
 );

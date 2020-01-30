@@ -13,16 +13,12 @@ class App extends React.Component {
   getHomes() {
     axios.get('/homes')
       .then((response) => {
-        // handle success
-        // console.log(response.data[0].homes);
-        // console.log(response.data[0].homes[0].images[0]);
         this.setState({
           homes: response.data[0].homes,
         });
       })
       .catch((error) => {
-        // handle error
-        console.log(error);
+        // console.log(error);
       })
       .finally(() => {
         // always executed

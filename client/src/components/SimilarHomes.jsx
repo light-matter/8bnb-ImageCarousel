@@ -1,6 +1,6 @@
 import React from 'react';
-import SimilarHome from './SimilarHome.jsx';
 import styled from 'styled-components';
+import SimilarHome from './SimilarHome.jsx';
 
 const RowDiv = styled.div`
   display: flex;
@@ -10,9 +10,7 @@ const RowDiv = styled.div`
 
 const SimilarHomes = ({similarHomes}) => (
   <RowDiv>
-    {similarHomes.map((similarHome, i) =>
-      <SimilarHome similarHome={similarHome} key={i}/>
-    )}
+    {similarHomes.map((similarHome, i) => <SimilarHome similarHome={similarHome} key={i} />)}
   </RowDiv>
 );
 
