@@ -1,52 +1,55 @@
 import React from 'react';
-import Arrow from './Arrow.jsx';
 import styled from 'styled-components';
+import Arrow from './Arrow.jsx';
 
 const ImgDiv = styled.div`
-  background-image: url(${props => props.image});
+  position: relative;
+  background-image: url(${(props) => props.image});
   background-size: cover;
   height: 250px;
   width: 350px;
   margin-left: 10px;
 `;
 
-const StyledArrow = styled(Arrow)`
-  background-color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-`;
+// const StyledArrow = styled(Arrow)`
+//   /* position: absolute; */
+//   float: left;
+//   width: 50px;
+//   height: 50px;
+//   top: 125px;
+//   right: 30px;
+// `;
 
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImgIdx: 0
+      currentImgIdx: 0,
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
   }
 
-  previousSlide () {
+  previousSlide() {
     const lastIndex = this.props.similarHome.images.length - 1;
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === 0;
     const index = shouldResetIndex ? lastIndex : currentImgIdx - 1;
 
     this.setState({
-      currentImgIdx: index
+      currentImgIdx: index,
     });
   }
 
-  nextSlide () {
+  nextSlide() {
     const lastIndex = this.props.similarHome.images.length - 1;
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === lastIndex;
     const index = shouldResetIndex ? 0 : currentImgIdx + 1;
 
     this.setState({
-      currentImgIdx: index
+      currentImgIdx: index,
     });
   }
 
@@ -54,16 +57,14 @@ class SimilarHome extends React.Component {
     return (
       <ImgDiv image={this.props.similarHome.images[this.state.currentImgIdx]}>
 
-        <Arrow direction = "left" handleSubmit = {this.previousSlide} glyph = "&#9664;" />
+        <Arrow direction="left" handleSubmit={this.previousSlide} />
 
-        {/*<img src = {this.props.similarHome.images[this.state.currentImgIdx]} height = '250' width = '350'></img>*/}
 
-        <Arrow direction = "right" handleSubmit = {this.nextSlide} glyph="&#9654;"/>
+        <Arrow direction="right" handleSubmit={this.nextSlide} />
 
       </ImgDiv>
     );
   }
-
 }
 
 

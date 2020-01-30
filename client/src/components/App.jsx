@@ -6,25 +6,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homes: []
+      homes: [],
     };
   }
 
   getHomes() {
     axios.get('/homes')
-      .then(response => {
+      .then((response) => {
         // handle success
         // console.log(response.data[0].homes);
         // console.log(response.data[0].homes[0].images[0]);
         this.setState({
-          homes: response.data[0].homes
+          homes: response.data[0].homes,
         });
       })
-      .catch(function (error) {
+      .catch((error) => {
         // handle error
         console.log(error);
       })
-      .finally(function () {
+      .finally(() => {
         // always executed
       });
   }
@@ -35,11 +35,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <SimilarHomes similarHomes={this.state.homes}/>
+      <SimilarHomes similarHomes={this.state.homes} />
     );
   }
 }
-
 
 
 export default App;
