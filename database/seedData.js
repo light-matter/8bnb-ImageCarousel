@@ -2,13 +2,12 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 var {Carousel} = require('./db.js');
 
-
 mongoose.connect('mongodb://localhost/homes', {useNewUrlParser: true, useUnifiedTopology:true});
 
 const seedData = (num) => {
 
   //formType(type is a reserved word in mongoose)
-  var formTypes = ['Entire cottage, Entire apartment, Entire House, Private Room, Shared Room']
+  var formTypes = ['Entire cottage', 'Entire apartment', 'Entire House', 'Private Room', 'Shared Room']
 
   var bucket = [];
   for(var l = 1; l <= 20; l++) {
