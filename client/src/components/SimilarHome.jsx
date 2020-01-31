@@ -11,21 +11,29 @@ const ImgDiv = styled.div`
   margin-left: 10px;
 `;
 
+// const BoxDiv = styled.div`
+//   position: relative;
+//   width: 250px;
+//   height: 150px;
+//   background-color: white;
+// `
+
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentImgIdx: 0,
-      showArrow: false
+      showArrow: false,
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+
   }
 
   previousSlide() {
-    const lastIndex = this.props.similarHome.images.length - 1;
+    const lastIndex = this.props.images.length - 1;
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === 0;
     const index = shouldResetIndex ? lastIndex : currentImgIdx - 1;
@@ -36,7 +44,7 @@ class SimilarHome extends React.Component {
   }
 
   nextSlide() {
-    const lastIndex = this.props.similarHome.images.length - 1;
+    const lastIndex = this.props.images.length - 1;
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === lastIndex;
     const index = shouldResetIndex ? 0 : currentImgIdx + 1;
@@ -52,14 +60,15 @@ class SimilarHome extends React.Component {
 
   render() {
     return (
-      <ImgDiv image={this.props.similarHome.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
+
+      <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
         <Arrow direction="left" handleSubmit={this.previousSlide} showArrow={this.state.showArrow} />
 
-
         <Arrow direction="right" handleSubmit={this.nextSlide} showArrow={this.state.showArrow} />
 
-      </ImgDiv>
+     </ImgDiv>
+
     );
   }
 }
