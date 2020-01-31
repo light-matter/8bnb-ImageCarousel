@@ -37,7 +37,7 @@ const seedData = (num) => {
       formType: formTypes[Math.floor(Math.random() * formTypes.length)],
       body: faker.random.words(),
       price: (Math.random() * 240 + 60).toFixed(2),
-      rating: Math.floor(Math.random() * 4) + 1,
+      rating: Math.random() * 4 + 1,
       numberOfRatings: Math.floor(Math.random() * 1000),
       images: randomNumImages(),
       heart: Math.random() >= 0.5,

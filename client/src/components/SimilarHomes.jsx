@@ -6,12 +6,11 @@ import TextInfo from './TextInfo.jsx'
 const RowDiv = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 `;
 
 const ContainerDiv = styled.div`
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   width: 350px;
   height: 350px;
 `

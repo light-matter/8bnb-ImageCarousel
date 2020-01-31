@@ -13,7 +13,7 @@ class App extends React.Component {
   getHomes() {
     axios.get('/homes')
       .then((response) => {
-        console.log(response.data[0].homes)
+        console.log(response.data[0].homes);
         this.setState({
           homes: response.data[0].homes,
         });
