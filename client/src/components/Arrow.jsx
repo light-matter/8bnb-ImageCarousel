@@ -18,7 +18,7 @@ const LeftArrow = styled.i`
 `;
 
 const Button = styled.button`
-  /* transform: direction === 'right' ? rotate(-45deg) : rotate(135deg); */
+  display: ${(props) => (props.showArrow ? 'block' : 'none')};
   position: absolute;
   width: 30px;
   height: 30px;
@@ -27,10 +27,13 @@ const Button = styled.button`
   right: ${(props) => (props.direction === 'right' ? '10px' : '310px')};
 `;
 
-const Arrow = ({ direction, handleSubmit }) => (
-  <Button className = "arrow" onClick={handleSubmit} direction={direction}>
-    {direction === 'left' ? <LeftArrow /> : <RightArrow />}
-  </Button>
+const Arrow = ({ direction, handleSubmit, showArrow }) => (
+
+    <Button className = "arrow" onClick={handleSubmit} direction={direction} showArrow={showArrow}>
+      {direction === 'left' ? <LeftArrow /> : <RightArrow />}
+    </Button>
+
 );
+
 
 export default Arrow;

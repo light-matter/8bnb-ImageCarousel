@@ -11,24 +11,17 @@ const ImgDiv = styled.div`
   margin-left: 10px;
 `;
 
-// const StyledArrow = styled(Arrow)`
-//   /* position: absolute; */
-//   float: left;
-//   width: 50px;
-//   height: 50px;
-//   top: 125px;
-//   right: 30px;
-// `;
-
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentImgIdx: 0,
+      showArrow: false
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   previousSlide() {
@@ -53,14 +46,18 @@ class SimilarHome extends React.Component {
     });
   }
 
+  handleToggle() {
+    this.setState({showArrow: !this.state.showArrow});
+  }
+
   render() {
     return (
-      <ImgDiv image={this.props.similarHome.images[this.state.currentImgIdx]}>
+      <ImgDiv image={this.props.similarHome.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
-        <Arrow direction="left" handleSubmit={this.previousSlide} />
+        <Arrow direction="left" handleSubmit={this.previousSlide} showArrow={this.state.showArrow} />
 
 
-        <Arrow direction="right" handleSubmit={this.nextSlide} />
+        <Arrow direction="right" handleSubmit={this.nextSlide} showArrow={this.state.showArrow} />
 
       </ImgDiv>
     );
