@@ -12,11 +12,9 @@ const FirstRow = styled.span`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 `
 
 const RightSide = styled.div`
-    /* float: right; */
 `;
 
 const LeftSide = styled.span`
@@ -27,7 +25,7 @@ const LeftSide = styled.span`
 
 
 const RatingDiv = styled.span`
-  font-size: 15px;
+  font-size: 14px;
   font-family: sans-serif;
   color: black;
 `;
@@ -36,6 +34,16 @@ const NumRatingDiv = styled.span`
   font-family: sans-serif;
   color: rgb(113,113,113);
 `;
+
+const BodyDiv = styled.div`
+  font-family: sans-serif;
+  font-size: 15.5px;
+  color: black;
+`
+const PriceDiv = styled.div`
+  font-family: sans-serif;
+  font-size: 14px;
+`
 
 
 const TextInfo = ({similarHome}) => (
@@ -67,9 +75,12 @@ const TextInfo = ({similarHome}) => (
 
     </FirstRow>
 
-      <div> {similarHome.body} </div>
-      <div> {similarHome.price} </div>
-
+      <BodyDiv> {similarHome.body} </BodyDiv>
+      <div>
+        <PriceDiv> <strong> {`$${similarHome.price}`}</strong> {
+          '/ homes'}
+         </PriceDiv>
+      </div>
     </TextContainer>
 );
 

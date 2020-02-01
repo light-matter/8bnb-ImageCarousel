@@ -5,7 +5,8 @@ import TextInfo from './TextInfo.jsx'
 
 const RowDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
 
 const ContainerDiv = styled.div`

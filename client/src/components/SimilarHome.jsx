@@ -11,13 +11,6 @@ const ImgDiv = styled.div`
   margin-left: 10px;
 `;
 
-// const BoxDiv = styled.div`
-//   position: relative;
-//   width: 250px;
-//   height: 150px;
-//   background-color: white;
-// `
-
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);

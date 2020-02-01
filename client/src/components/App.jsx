@@ -32,7 +32,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <SimilarHomes similarHomes={this.state.homes} />
+      <div>
+        <h2> More homes you make like </h2>
+        <SimilarHomes similarHomes={this.state.homes} />
+      </div>
     );
   }
 }
