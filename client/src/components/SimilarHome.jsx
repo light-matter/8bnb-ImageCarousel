@@ -18,12 +18,13 @@ class SimilarHome extends React.Component {
     this.state = {
       currentImgIdx: 0,
       showButtons: false,
-      // heart: this.props.similarHome.heart;
+      heart: false
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.heartClick = this.heartClick.bind(this);
 
   }
 
@@ -43,10 +44,13 @@ class SimilarHome extends React.Component {
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === lastIndex;
     const index = shouldResetIndex ? 0 : currentImgIdx + 1;
-
     this.setState({
       currentImgIdx: index,
     });
+  }
+
+  heartClick() {
+    this.setState({heart: !this.state.heart});
   }
 
   handleToggle() {
@@ -58,7 +62,7 @@ class SimilarHome extends React.Component {
 
       <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
-        <Heart showButtons = {this.state.showButtons}/>
+        <Heart showButtons = {this.state.showButtons} handleSubmit={this.heartClick} heartStatus={this.state.heart}/>
 
         <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
 
