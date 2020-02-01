@@ -1,7 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import SimilarHomes from './SimilarHomes.jsx';
+import styled from 'styled-components';
 
+const TitleHead = styled.h2`
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(72,72,72);
+`
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2> More homes you make like </h2>
+        <TitleHead> More homes you make like </TitleHead>
         <SimilarHomes similarHomes={this.state.homes} />
       </div>
     );
