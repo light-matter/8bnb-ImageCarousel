@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 const HeartSVG = styled.svg`
+  position: absolute;
   fill: red;
   fill-opacity: 50;
   stroke-width: 2;
   top: 3px;
+  right: 4px;
   width: 15px;
 `
 const HeartButton = styled.button`
   position: absolute;
-  width: 8px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   top: -90px;
   right: 0px;
   border-radius: 50%;
@@ -26,6 +28,6 @@ const Heart = ({showButtons,handleSubmit}) => (
 
 
   </HeartButton>
-)
+);
 
 export default Heart;
