@@ -1,14 +1,14 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 var {Carousel} = require('./db.js');
-
+const {bodyArr} = require('./bodyData.js')
 
 mongoose.connect('mongodb://localhost/homes', {useNewUrlParser: true, useUnifiedTopology:true});
 
 const seedData = (num) => {
 
   //formType(type is a reserved word in mongoose)
-  var formTypes = ['Entire cottage, Entire apartment, Entire House, Private Room, Shared Room']
+  var formTypes = ['Entire cottage', 'Entire apartment', 'Entire House', 'Private Room', 'Shared Room']
 
   var bucket = [];
   for(var l = 1; l <= 20; l++) {
@@ -36,9 +36,10 @@ const seedData = (num) => {
       homeId:  Math.floor(Math.random() * 5) + 5,
       numberOfBeds: Math.floor(Math.random() * 5) + 1,
       formType: formTypes[Math.floor(Math.random() * formTypes.length)],
-      body: faker.random.words(),
+      // body: faker.random.words(),
+      body: bodyArr[Math.floor(Math.random() * bodyArr.length)],
       price: (Math.random() * 240 + 60).toFixed(2),
-      rating: Math.floor(Math.random() * 4) + 1,
+      rating: (Math.random() * 4 + 1).toFixed(2),
       numberOfRatings: Math.floor(Math.random() * 1000),
       images: randomNumImages(),
       heart: Math.random() >= 0.5,

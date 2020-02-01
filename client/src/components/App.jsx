@@ -1,32 +1,33 @@
 import React from 'react';
 import axios from 'axios';
 import SimilarHomes from './SimilarHomes.jsx';
+import styled from 'styled-components';
 
-class App extends React.Component{
+const TitleHead = styled.h2`
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(72,72,72);
+`
+class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      homes: []
-    }
-    // console.log(this.state.image);
+      homes: [],
+    };
   }
 
   getHomes() {
     axios.get('/homes')
-      .then(response => {
-        // handle success
+      .then((response) => {
         console.log(response.data[0].homes);
-        // console.log(response.data[0].homes[0].images[0]);
         this.setState({
-          homes: response.data[0].homes
-          // image: response.data[0].homes[0].images[0]
-        })
+          homes: response.data[0].homes,
+        });
       })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
+      .catch((error) => {
+        // console.log(error);
       })
-      .finally(function () {
+      .finally(() => {
         // always executed
       });
   }
@@ -36,14 +37,14 @@ class App extends React.Component{
   }
 
   render() {
-    return(
-      <span>
-        <SimilarHomes similarHomes={this.state.homes}/>
-      </span>
-    )
+    return (
+      <div>
+        <TitleHead> More homes you make like </TitleHead>
+        <SimilarHomes similarHomes={this.state.homes} />
+      </div>
+    );
   }
 }
-
 
 
 export default App;

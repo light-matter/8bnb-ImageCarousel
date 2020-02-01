@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const {getHomes} = require('../database/db.js');
+const regeneratorRuntime = require('regenerator-runtime');
 const app = express()
 const port = 3000
 
@@ -27,3 +28,5 @@ app.get('/homes', async(req, res) => {
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+module.exports = app;
