@@ -5,7 +5,7 @@ const TextContainer = styled.div`
   height: 100px;
   width: 350px;
   margin-left: 10px;
-  flex-flow: row wrap;
+  flex-direction: row;
 `
 const FirstRow = styled.span`
   margin-top: 10px;
@@ -22,7 +22,6 @@ const LeftSide = styled.span`
   font-family: sans-serif;
   color: rgb(113,113,113);
 `;
-
 
 const RatingDiv = styled.span`
   font-size: 14px;
