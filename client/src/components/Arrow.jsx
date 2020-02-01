@@ -18,7 +18,7 @@ const LeftArrow = styled.i`
 `;
 
 const Button = styled.button`
-  display: ${(props) => (props.showArrow ? 'block' : 'none')};
+  display: ${(props) => (props.showButtons ? 'block' : 'none')};
   position: absolute;
   width: 30px;
   height: 30px;
@@ -27,9 +27,9 @@ const Button = styled.button`
   right: ${(props) => (props.direction === 'right' ? '10px' : '310px')};
 `;
 
-const Arrow = ({ direction, handleSubmit, showArrow }) => (
+const Arrow = ({ direction, handleSubmit, showButtons }) => (
 
-    <Button className = "arrow" onClick={handleSubmit} direction={direction} showArrow={showArrow}>
+    <Button className = "arrow" onClick={handleSubmit} direction={direction} showButtons={showButtons}>
       {direction === 'left' ? <LeftArrow /> : <RightArrow />}
     </Button>
 

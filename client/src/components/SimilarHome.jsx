@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
+import HeartButton from './HeartButton.jsx';
 
 const ImgDiv = styled.div`
   position: relative;
@@ -16,7 +17,8 @@ class SimilarHome extends React.Component {
     super(props);
     this.state = {
       currentImgIdx: 0,
-      showArrow: false,
+      showButtons: false,
+      // heart: this.props.similarHome.heart;
     };
 
     this.previousSlide = this.previousSlide.bind(this);
@@ -48,7 +50,7 @@ class SimilarHome extends React.Component {
   }
 
   handleToggle() {
-    this.setState({showArrow: !this.state.showArrow});
+    this.setState({showButtons: !this.state.showButtons});
   }
 
   render() {
@@ -56,9 +58,11 @@ class SimilarHome extends React.Component {
 
       <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
-        <Arrow direction="left" handleSubmit={this.previousSlide} showArrow={this.state.showArrow} />
+        <HeartButton/>
 
-        <Arrow direction="right" handleSubmit={this.nextSlide} showArrow={this.state.showArrow} />
+        <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
+
+        <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
 
      </ImgDiv>
 
