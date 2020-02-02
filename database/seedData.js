@@ -41,10 +41,11 @@ const seedData = (num) => {
       // body: faker.random.words(),
       body: bodyArr[Math.floor(Math.random() * bodyArr.length)],
       price: (Math.random() * 240 + 60).toFixed(2),
-      rating: (Math.random() * 4 + 1).toFixed(2),
+      rating: (Math.random() * 1 + 4).toFixed(2), //high rating between 4 - 5
       numberOfRatings: Math.floor(Math.random() * 1000),
       images: randomNumImages(),
       heart: Math.random() >= 0.5,
+      plus: Math.random() >= 0.5
     }
     similarHomes.push(similarHome);
   }
