@@ -3,22 +3,8 @@ import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
 import Heart from './Heart.jsx';
 import Dots from './Dots.jsx';
+import {ImgDiv, ImgTopDiv, ImgBottomDiv} from '../styles/SimilarHomeStyle.jsx';
 
-const ImgDiv = styled.div`
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  height: 250px;
-  width: 350px;
-  margin-left: 10px;
-  position: relative;
-  border-radius: 2%;
-`;
-
-const ImgTopDiv = styled.div`
-`
-const ImgBottomDiv = styled.div`
-
-`
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);

@@ -3,29 +3,7 @@ import styled from 'styled-components';
 import SimilarHome from './SimilarHome.jsx';
 import TextInfo from './TextInfo.jsx'
 import OuterArrow from './OuterArrow.jsx';
-
-const RowDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-`;
-
-const ContainerDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 25px;
-  width: 350px;
-  height: 350px;
-`
-const OuterRightArrowDiv = styled.div`
-  /* position: relative; */
-  float: right;
-`
-const OuterLeftArrowDiv = styled.div`
-  /* position: relative; */
-  float: left;
-`
-
+import {RowDiv, ContainerDiv, OuterRightArrowDiv, OuterLeftArrowDiv} from '../styles/SimilarHomesStyle.jsx';
 
 class SimilarHomes extends Component{
   constructor(props){

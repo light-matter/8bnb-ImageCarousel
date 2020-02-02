@@ -1,48 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const TextContainer = styled.div`
-  height: 100px;
-  width: 350px;
-  margin-left: 10px;
-  flex-direction: row;
-`
-const FirstRow = styled.span`
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-const RightSide = styled.div`
-`;
-
-const LeftSide = styled.span`
-  font-size: 14px;
-  font-family: sans-serif;
-  color: rgb(113,113,113);
-`;
-
-const RatingDiv = styled.span`
-  font-size: 14px;
-  font-family: sans-serif;
-  color: black;
-`;
-const NumRatingDiv = styled.span`
-  font-size: 14px;
-  font-family: sans-serif;
-  color: rgb(113,113,113);
-`;
-
-const BodyDiv = styled.div`
-  font-family: sans-serif;
-  font-size: 15.5px;
-  color: black;
-`
-const PriceDiv = styled.div`
-  font-family: sans-serif;
-  font-size: 14px;
-`
+import {TextContainer, FirstRow, RightSide, LeftSide, RatingDiv, NumRatingDiv, BodyDiv, PriceDiv} from '../styles/TextInfoStyle.jsx';
 
 
 const TextInfo = ({similarHome}) => (

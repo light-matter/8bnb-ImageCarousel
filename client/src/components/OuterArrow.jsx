@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// import {RightArrow, LeftArrow, Button} from '../styles/OuterArrowStyle.jsx';
 
 const RightArrow = styled.svg`
   height: 22px;
@@ -20,8 +21,6 @@ const Button = styled.button`
   transform: translate(0px, 115px);
   border:none;
 `;
-
-
 const OuterArrow = ({ direction, handleSubmit, showButtons }) => (
 
   <Button onClick={handleSubmit} direction={direction} showButtons={showButtons}>
