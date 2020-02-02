@@ -25,7 +25,7 @@ class SimilarHomes extends Component{
     this.state = {
       currentFirstIndex: 0,
       currentLastIndex: 2,
-      showLeftButton: false,
+      showLeftButton: true,
       showRightButton: true
     }
     this.previousList = this.previousList.bind(this);
@@ -36,8 +36,8 @@ class SimilarHomes extends Component{
     if(this.state.currentFirstIndex > 0) {
       this.setState(prevState => ({
         currentFirstIndex: prevState.currentFirstIndex - 1,
-        currentLastIndex: prevState.currentLastIndex - 1
-      }))
+        currentLastIndex: prevState.currentLastIndex - 1,
+      }));
     }
   }
 
@@ -56,7 +56,7 @@ class SimilarHomes extends Component{
 
       <RowDiv>
       <div>
-      <OuterArrow direction = 'left' handleSubmit = {this.previousList} />
+      <OuterArrow direction = 'left' handleSubmit = {this.previousList} showButtons = {this.state.showLeftButton}/>
 
       </div>
       {this.props.similarHomes.slice(this.state.currentFirstIndex,this.state.currentLastIndex+1).map((similarHome, i) =>
@@ -66,8 +66,8 @@ class SimilarHomes extends Component{
         </ContainerDiv>
         )}
         <div>
-        
-        <OuterArrow direction = 'right' handleSubmit = {this.nextList} />
+
+        <OuterArrow direction = 'right' handleSubmit = {this.nextList} showButtons = {this.state.showRightButton}/>
 
         </div>
       </RowDiv>
