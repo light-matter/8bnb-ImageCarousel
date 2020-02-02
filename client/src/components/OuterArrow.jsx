@@ -19,6 +19,7 @@ const LeftArrow = styled.svg`
 const Button = styled.button`
   display: ${(props) => (props.showButtons ? 'block' : 'none')};
   transform: translate(0px, 115px);
+  border:none;
 `;
 
 const OuterArrow = ({ direction, handleSubmit, showButtons }) => (

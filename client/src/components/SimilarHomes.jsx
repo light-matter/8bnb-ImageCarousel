@@ -25,18 +25,21 @@ class SimilarHomes extends Component{
     this.state = {
       currentFirstIndex: 0,
       currentLastIndex: 2,
-      showLeftButton: true,
-      showRightButton: true
+      showLeftButton: false,
+      showRightButton: true,
     }
     this.previousList = this.previousList.bind(this);
     this.nextList = this.nextList.bind(this);
   }
+
 
   previousList() {
     if(this.state.currentFirstIndex > 0) {
       this.setState(prevState => ({
         currentFirstIndex: prevState.currentFirstIndex - 1,
         currentLastIndex: prevState.currentLastIndex - 1,
+        showLeftButton: prevState.currentFirstIndex > -1,
+        showRightButton: prevState.currentLastIndex < this.props.similarHomes.length -2
       }));
     }
   }
@@ -45,7 +48,9 @@ class SimilarHomes extends Component{
     if(this.state.currentLastIndex < this.props.similarHomes.length - 1){
       this.setState(prevState => ({
         currentFirstIndex: prevState.currentFirstIndex + 1,
-        currentLastIndex: prevState.currentLastIndex + 1
+        currentLastIndex: prevState.currentLastIndex + 1,
+        showLeftButton: prevState.currentFirstIndex > -1,
+        showRightButton: prevState.currentLastIndex < this.props.similarHomes.length -2
       })
     )
   }
