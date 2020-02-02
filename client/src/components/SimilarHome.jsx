@@ -81,7 +81,7 @@ class SimilarHome extends React.Component {
 
         <ImgBottomDiv>
 
-        <Dots/>
+        <Dots numOfDots = {this.props.images.length}/>
 
         </ImgBottomDiv>
 

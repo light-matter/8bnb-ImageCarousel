@@ -77,7 +77,7 @@ class SimilarHomes extends Component{
 
       {this.props.similarHomes.slice(this.state.currentFirstIndex,this.state.currentLastIndex+1).map((similarHome, i) =>
         <ContainerDiv key={i}>
-        <SimilarHome images={similarHome.images} />
+        <SimilarHome images={similarHome.images}/>
         <TextInfo similarHome={similarHome}/>
         </ContainerDiv>
       )}

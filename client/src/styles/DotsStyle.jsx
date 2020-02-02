@@ -25,25 +25,6 @@ export const DotsDiv2 = styled.div`
     contain: content;
 `;
 
-export const DotsDiv3 = styled.div`
-    display: flex;
-    padding-bottom: 12px;
-    max-width: 55px;
-    overflow: hidden;
-`;
-
-export const DotsLine = styled.div`
-    -webkit-box-pack: center;
-    -webkit-box-align: end;
-    align-items: flex-end;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
-`;
-
 export const DotSVG = styled.svg`
     height: 12px;
     margin-left: 2.5px;
