@@ -37,6 +37,7 @@ class SimilarHome extends React.Component {
     const { currentImgIdx } = this.state;
     const shouldResetIndex = currentImgIdx === lastIndex;
     const index = shouldResetIndex ? 0 : currentImgIdx + 1;
+
     this.setState({
       currentImgIdx: index,
     });
@@ -67,7 +68,7 @@ class SimilarHome extends React.Component {
 
         <ImgBottomDiv>
 
-        <Dots numOfDots = {this.props.images.length}/>
+        <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
 
         </ImgBottomDiv>
 

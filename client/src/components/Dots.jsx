@@ -7,7 +7,7 @@ class Dots extends Component{
   constructor(props){
     super(props);
     this.state = {
-      
+      // currentIndex: 0
     };
   }
 
@@ -16,7 +16,7 @@ class Dots extends Component{
     const dotArray = [];
 
     for(var i = 0; i < this.props.numOfDots; i++) {
-      dotArray.push(<DotSVG key = {i} viewBox="0 0 100 100" >
+      dotArray.push(<DotSVG key = {i} dotIndex = {i} currentIndex = {this.props.currentIndex} viewBox="0 0 100 100" >
            <circle cx="50" cy="50" r="50"/>
         </DotSVG>)
     }
@@ -25,7 +25,7 @@ class Dots extends Component{
       <DotsDiv1>
       <DotsDiv2>
 
-      {dotArray}
+      {dotArray.slice(0, 5)}
 
       </DotsDiv2>
       </DotsDiv1>

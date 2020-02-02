@@ -32,7 +32,7 @@ export const DotSVG = styled.svg`
     min-width: 6px;
     width: 6px;
     fill: rgb(255, 255, 255);
-    opacity: 1;
+    opacity: ${(props) => (props.currentIndex === props.dotIndex) ? 1 : 0.5};
     border-radius: 50%;
 `;
 
