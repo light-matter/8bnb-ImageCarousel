@@ -32,7 +32,15 @@ export const PlusButton = styled.button`
     color: white;
     border-radius: 5px;
     padding: 2px;
-    /* display: ${(props) => props.hasPlus ? 'block' : 'none'}; */
+`;
+
+export const SuperHostButton = styled.button`
+    background-color: rgb(255, 255, 255);
+    width: 80px;
+    font-size: 12px;
+    color: black;
+    border-radius: 5px;
+    padding: 2px;
 `;
 
 export const RatingDiv = styled.span`

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {TextContainer, FirstRow, RightSide, LeftSide, RatingDiv, NumRatingDiv, BodyDiv, PriceDiv, InfoSpan, PlusButton} from '../styles/TextInfoStyle.jsx';
+import {TextContainer, FirstRow, RightSide, LeftSide, RatingDiv, NumRatingDiv, BodyDiv, PriceDiv, InfoSpan, PlusButton, SuperHostButton} from '../styles/TextInfoStyle.jsx';
 
 
 const TextInfo = ({similarHome}) => (
@@ -9,8 +9,8 @@ const TextInfo = ({similarHome}) => (
         <FirstRow>
 
           <LeftSide>
-           {(similarHome.plus && !similarHome.superhost) ? <PlusButton> PLUS </PlusButton> : ''}
-            <InfoSpan>{`${similarHome.formType} ·  ${similarHome.numberOfBeds} Beds`}</InfoSpan>
+           {similarHome.plus && !similarHome.superhost ? <PlusButton> PLUS </PlusButton> : similarHome.superhost && !similarHome.plus ? <SuperHostButton> SUPERHOST </SuperHostButton> : ''}
+            <InfoSpan>{` ${similarHome.formType} ·  ${similarHome.numberOfBeds} Beds`}</InfoSpan>
           </LeftSide>
 
 
