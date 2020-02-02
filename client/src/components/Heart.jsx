@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 const HeartSVG = styled.svg`
   position: absolute;
   fill: ${props => props.heartStatus ? 'red' : 'none'};

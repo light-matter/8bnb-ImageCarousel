@@ -17,6 +17,12 @@ const ContainerDiv = styled.div`
   width: 350px;
   height: 350px;
 `
+const OuterRightArrowDiv = styled.div`
+
+`
+const OuterLeftArrowDiv = styled.div`
+
+`
 
 
 class SimilarHomes extends Component{
@@ -38,8 +44,8 @@ class SimilarHomes extends Component{
       this.setState(prevState => ({
         currentFirstIndex: prevState.currentFirstIndex - 1,
         currentLastIndex: prevState.currentLastIndex - 1,
-        showLeftButton: prevState.currentFirstIndex > -1,
-        showRightButton: prevState.currentLastIndex < this.props.similarHomes.length -2
+        showLeftButton: prevState.currentFirstIndex - 1 > 0,
+        showRightButton: prevState.currentLastIndex - 1 < this.props.similarHomes.length - 1
       }));
     }
   }
@@ -49,8 +55,8 @@ class SimilarHomes extends Component{
       this.setState(prevState => ({
         currentFirstIndex: prevState.currentFirstIndex + 1,
         currentLastIndex: prevState.currentLastIndex + 1,
-        showLeftButton: prevState.currentFirstIndex > -1,
-        showRightButton: prevState.currentLastIndex < this.props.similarHomes.length -2
+        showLeftButton: prevState.currentFirstIndex + 1 > 0,
+        showRightButton: prevState.currentLastIndex + 1 < this.props.similarHomes.length -1
       })
     )
   }
@@ -60,21 +66,26 @@ class SimilarHomes extends Component{
     return(
 
       <RowDiv>
-      <div>
+
+      <OuterLeftArrowDiv>
+
       <OuterArrow direction = 'left' handleSubmit = {this.previousList} showButtons = {this.state.showLeftButton}/>
 
-      </div>
+      </OuterLeftArrowDiv>
+
       {this.props.similarHomes.slice(this.state.currentFirstIndex,this.state.currentLastIndex+1).map((similarHome, i) =>
         <ContainerDiv key={i}>
         <SimilarHome images={similarHome.images} />
         <TextInfo similarHome={similarHome}/>
         </ContainerDiv>
-        )}
-        <div>
+      )}
+
+        <OuterRightArrowDiv>
 
         <OuterArrow direction = 'right' handleSubmit = {this.nextList} showButtons = {this.state.showRightButton}/>
 
-        </div>
+        </OuterRightArrowDiv>
+
       </RowDiv>
 
     )
