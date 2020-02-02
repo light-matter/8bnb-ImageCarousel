@@ -10,17 +10,19 @@ const seedData = (num) => {
   //formType(type is a reserved word in mongoose)
   var formTypes = ['Entire cottage', 'Entire apartment', 'Entire House', 'Private Room', 'Shared Room']
 
+  //40 images in the S3 bucket
   var bucket = [];
-  for(var l = 1; l <= 20; l++) {
+  for(var l = 1; l <= 40; l++) {
     var image = `https://8bnb-homes.s3-us-west-1.amazonaws.com/${l}.jpg`;
     bucket.push(image);
   }
-  //function generates random number of images between 5-10.
+
+  //function generates random number of images between 10-20.
   const randomNumImages = () => {
     var images = [];
-    for(var j = 0; j < Math.floor(Math.random()*5)+5; j++) {
-      //selects from the bucket of 20 images
-      images.push(bucket[Math.floor(Math.random() * 19) + 1]);
+    for(var j = 0; j < Math.floor(Math.random()*10)+10; j++) {
+      //selects from the bucket of 40 images
+      images.push(bucket[Math.floor(Math.random() * 39) + 1]);
     }
     return images;
   }
