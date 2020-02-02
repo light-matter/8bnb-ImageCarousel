@@ -9,6 +9,7 @@ const HeartSVG = styled.svg`
   top: 3px;
   right: 4px;
   width: 15px;
+  stroke: ${props => props.heartStatus ? 'none' : 'black'};
 `
 const HeartButton = styled.button`
   position: absolute;

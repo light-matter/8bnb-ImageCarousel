@@ -1,32 +1,12 @@
 import React from 'react';
-import {DotsDiv1, DotsDiv2, DotsDiv3, DotsLine, DotsSVG} from '../styles/DotsStyle.js';
+import {DotsDiv1, DotsDiv2, DotsDiv3, DotsLine, DotSVG} from '../styles/DotsStyle.jsx';
 
-const DotsList = (props) => (
+const Dots = (props) => (
   <DotsDiv1>
       <DotsDiv2>
           <DotsDiv3>
-              <DotsLine currentImageIndex={}>
+              <DotsLine>
                   <DotSVG name="dot1" viewBox="0 0 100 100" >
-                      <circle cx="50" cy="50" r="50"/>
-                  </DotSVG>
-
-                  <DotSVG name="dot2" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="50"/>
-                  </DotSVG>
-
-                  <DotSVG name="dot3" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r ="50"/>
-                  </DotSVG>
-
-                  <DotSVG name="dot4" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="50"/>
-                  </DotSVG>
-
-                  <DotSVG name="dot5" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="50"/>
-                  </DotSVG>
-
-                  <DotSVG name="dot6" viewBox="0 0 100 100">
                       <circle cx="50" cy="50" r="50"/>
                   </DotSVG>
               </DotsLine>
@@ -34,3 +14,5 @@ const DotsList = (props) => (
       </DotsDiv2>
   </DotsDiv1>
 );
+
+export default Dots;

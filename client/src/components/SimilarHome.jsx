@@ -2,16 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
 import Heart from './Heart.jsx';
+import Dots from './Dots.jsx';
 
 const ImgDiv = styled.div`
-  position: relative;
   background-image: url(${(props) => props.image});
   background-size: cover;
   height: 250px;
   width: 350px;
   margin-left: 10px;
+  position: relative;
+  border-radius: 2%;
 `;
 
+const ImgTopDiv = styled.div`
+`
+const ImgBottomDiv = styled.div`
+
+`
 class SimilarHome extends React.Component {
   constructor(props) {
     super(props);
@@ -62,13 +69,23 @@ class SimilarHome extends React.Component {
 
       <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
+        <ImgTopDiv>
+
         <Heart showButtons = {this.state.showButtons} handleSubmit={this.heartClick} heartStatus={this.state.heart}/>
 
         <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
 
         <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
 
-     </ImgDiv>
+        </ImgTopDiv>
+
+        <ImgBottomDiv>
+
+        <Dots/>
+
+        </ImgBottomDiv>
+
+      </ImgDiv>
 
     );
   }

@@ -7,7 +7,7 @@ import OuterArrow from './OuterArrow.jsx';
 const RowDiv = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 const ContainerDiv = styled.div`
@@ -18,10 +18,12 @@ const ContainerDiv = styled.div`
   height: 350px;
 `
 const OuterRightArrowDiv = styled.div`
-  position: relative;
+  /* position: relative; */
+  float: right;
 `
 const OuterLeftArrowDiv = styled.div`
-  position: relative;
+  /* position: relative; */
+  float: left;
 `
 
 
