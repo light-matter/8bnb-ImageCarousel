@@ -19,7 +19,20 @@ export const RightSide = styled.div`
 export const LeftSide = styled.span`
   font-size: 14px;
   font-family: sans-serif;
+`;
+
+export const InfoSpan = styled.span`
   color: rgb(113,113,113);
+`;
+
+export const PlusButton = styled.button`
+    background-color: rgb(145, 24, 77);
+    width: 45px;
+    font-size: 12px;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+    /* display: ${(props) => props.hasPlus ? 'block' : 'none'}; */
 `;
 
 export const RatingDiv = styled.span`

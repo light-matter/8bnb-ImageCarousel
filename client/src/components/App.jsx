@@ -21,7 +21,7 @@ class App extends React.Component {
       .then((response) => {
         console.log(response.data[1].homes);
         this.setState({
-          homes: response.data[1].homes,
+          homes: response.data[2].homes,
         });
       })
       .catch((error) => {

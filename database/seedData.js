@@ -32,8 +32,8 @@ const seedData = (num) => {
 
   //similarHomes = array of similarHome.
   var similarHomes= [];
-  //10 similar homes
-  for(var k = 0; k < 10; k++) {
+  //20 similar homes
+  for(var k = 0; k < 20; k++) {
     var similarHome = {
       homeId:  Math.floor(Math.random() * 5) + 5,
       numberOfBeds: Math.floor(Math.random() * 5) + 1,

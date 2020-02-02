@@ -23,6 +23,8 @@ var carouselSchema = mongoose.Schema({
       numberOfRatings: Number, //number of ratings
       images: [String], //image array of home
       heart: Boolean, //favorite icon
+      plus: Boolean, //plus status
+      superhost: Boolean //superhost status
   }]
 
 });
