@@ -4,7 +4,7 @@ export const DotsDiv1 = styled.div`
     -webkit-box-pack: center;
     -webkit-box-align: end;
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
     left: 0px;
     right: 0px;
     display: flex;
@@ -20,7 +20,8 @@ export const DotsDiv2 = styled.div`
     align-items: flex-end;
     display: flex;
     justify-content: center;
-    height: 100%;
+    width: 350px;
+    height: 80%;
     contain: content;
 `;
 
@@ -45,13 +46,12 @@ export const DotsLine = styled.div`
 
 export const DotSVG = styled.svg`
     height: 12px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
     min-width: 6px;
     width: 6px;
     fill: rgb(255, 255, 255);
     opacity: 1;
     border-radius: 50%;
-    position: absolute;
 `;
 
