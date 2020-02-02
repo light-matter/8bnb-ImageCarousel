@@ -18,14 +18,15 @@ const LeftArrow = styled.svg`
 
 const Button = styled.button`
   display: ${(props) => (props.showButtons ? 'block' : 'none')};
-
+  transform: translate(0px, 115px);
 `;
 
 const OuterArrow = ({ direction, handleSubmit, showButtons }) => (
 
     <Button onClick={handleSubmit} direction={direction} showButtons={showButtons}>
-      {direction === 'left' ? <LeftArrow viewBox="0 0 18 18" role="img" aria-label="Previous" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"></path></LeftArrow> : <RightArrow viewBox="0 0 18 18" role="img" aria-label="Next" focusable="false" ><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z"></path></RightArrow>}
+      {direction === 'left' ? <LeftArrow viewBox="0 0 18 18" role="img" aria-label="Previous" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z"></path></LeftArrow> : <RightArrow viewBox="0 0 18 18" role="img" aria-label="Next" focusable="false" ><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z"></path></RightArrow>}
     </Button>
+
 
 );
 
