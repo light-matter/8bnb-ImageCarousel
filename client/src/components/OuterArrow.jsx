@@ -16,7 +16,7 @@ const LeftArrow = styled.svg`
 `;
 
 const Button = styled.button`
-  display: ${(props) => (props.showButtons ? 'block' : 'none')};
+  visibility: ${(props) => (props.showButtons ? 'visible' : 'hidden')};
   transform: translate(0px, 115px);
   border:none;
 `;

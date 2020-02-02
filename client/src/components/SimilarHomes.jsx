@@ -18,10 +18,10 @@ const ContainerDiv = styled.div`
   height: 350px;
 `
 const OuterRightArrowDiv = styled.div`
-
+  position: relative;
 `
 const OuterLeftArrowDiv = styled.div`
-
+  position: relative;
 `
 
 
