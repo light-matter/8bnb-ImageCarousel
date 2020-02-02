@@ -45,7 +45,8 @@ const seedData = (num) => {
       numberOfRatings: Math.floor(Math.random() * 1000),
       images: randomNumImages(),
       heart: Math.random() >= 0.5,
-      plus: Math.random() >= 0.5
+      plus: Math.random() >= 0.5,
+      superhost: Math.random() >= 0.5
     }
     similarHomes.push(similarHome);
   }
