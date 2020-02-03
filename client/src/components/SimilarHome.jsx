@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
 import Heart from './Heart.jsx';
 import Dots from './Dots.jsx';
+import Modal from './Modal.jsx';
 import {ImgDiv, ImgTopDiv, ImgBottomDiv} from '../styles/SimilarHomeStyle.jsx';
 
 class SimilarHome extends React.Component {
@@ -29,6 +30,7 @@ class SimilarHome extends React.Component {
 
     this.setState({
       currentImgIdx: index,
+      showModal: false
     });
   }
 
@@ -44,7 +46,10 @@ class SimilarHome extends React.Component {
   }
 
   heartClick() {
-    this.setState({heart: !this.state.heart});
+    this.setState({
+      heart:!this.state.heart,
+      showModal: !this.state.showModal
+    });
   }
 
   handleToggle() {
@@ -71,6 +76,11 @@ class SimilarHome extends React.Component {
         <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
 
         </ImgBottomDiv>
+
+        <Modal showModal = {this.state.showModal} heartClick = {this.heartClick}>
+          <h2> Modal Component </h2>
+          <p> random text </p>
+        </Modal>
 
       </ImgDiv>
 
