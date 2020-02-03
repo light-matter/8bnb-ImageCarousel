@@ -16,7 +16,7 @@ class Dots extends Component{
     const dotArray = [];
 
     for(var i = 0; i < this.props.numOfDots; i++) {
-      dotArray.push(<DotSVG key = {i} dotIndex = {i} currentIndex = {this.props.currentIndex} viewBox="0 0 100 100" >
+      dotArray.push(<DotSVG key = {i} dotIndex = {i} currentIndex = {this.props.currentIndex} numberOfDots = {this.props.numOfDots} viewBox="0 0 100 100" >
            <circle cx="50" cy="50" r="50"/>
         </DotSVG>)
     }
