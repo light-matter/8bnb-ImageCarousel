@@ -19,9 +19,18 @@ class SimilarHomes extends Component{
     this.previousList = this.previousList.bind(this);
     this.nextList = this.nextList.bind(this);
     this.modalClick = this.modalClick.bind(this);
+    this.handleHeartClick = this.handleHeartClick.bind(this);
+  }
+
+  handleHeartClick() {
+    console.log('eventtargetname', event.target.name);
+    if(event.target.getAttribute('name') === 'firstHeart') {
+      this.modalClick();
+    }
   }
 
   modalClick() {
+    event.preventDefault();
     this.setState({showModal: !this.state.showModal});
   }
 
@@ -62,7 +71,7 @@ class SimilarHomes extends Component{
 
       {this.props.similarHomes.slice(this.state.currentFirstIndex,this.state.currentLastIndex+1).map((similarHome, i) =>
         <ContainerDiv key={i}>
-        <SimilarHome images={similarHome.images} modalClick = {this.modalClick}/>
+        <SimilarHome images = {similarHome.images} handleHeartClick = {this.handleHeartClick}/>
         <TextInfo similarHome={similarHome}/>
         </ContainerDiv>
       )}
