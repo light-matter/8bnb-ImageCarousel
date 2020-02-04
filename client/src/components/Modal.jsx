@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import HeartModal from './HeartModal.jsx';
 
 const BackgroundDiv = styled.div`
-  position: fixed;
+  position: absolute;
+  overflow: hidden;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background:(0,0,0,0.6);
+  background: rgba(0,0,0,0.6);
   display: ${(props => props.showModal ? 'block' : 'none')};
 
 `
@@ -29,6 +31,7 @@ const Modal = ({showModal, modalClick, children}) => {
       <ModalDiv>
         <h1> close </h1>
         <button onClick = {modalClick}> Close </button>
+        <HeartModal/>
       </ModalDiv>
     </BackgroundDiv>
 
