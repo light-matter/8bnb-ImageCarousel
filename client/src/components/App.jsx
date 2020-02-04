@@ -19,9 +19,9 @@ class App extends React.Component {
   getHomes() {
     axios.get('/homes')
       .then((response) => {
-        console.log(response.data[0].homes);
+        console.log(response.data[1].homes);
         this.setState({
-          homes: response.data[0].homes,
+          homes: response.data[2].homes,
         });
       })
       .catch((error) => {

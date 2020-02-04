@@ -2,15 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
 import Heart from './Heart.jsx';
-
-const ImgDiv = styled.div`
-  position: relative;
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  height: 250px;
-  width: 350px;
-  margin-left: 10px;
-`;
+import Dots from './Dots.jsx';
+import {ImgDiv, ImgTopDiv, ImgBottomDiv} from '../styles/SimilarHomeStyle.jsx';
 
 class SimilarHome extends React.Component {
   constructor(props) {
@@ -18,12 +11,13 @@ class SimilarHome extends React.Component {
     this.state = {
       currentImgIdx: 0,
       showButtons: false,
-      // heart: this.props.similarHome.heart;
+      heart: false
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.heartClick = this.heartClick.bind(this);
 
   }
 
@@ -49,6 +43,11 @@ class SimilarHome extends React.Component {
     });
   }
 
+  //click heart inside the Modal
+  heartClick() {
+    this.setState({heart:!this.state.heart});
+  }
+
   handleToggle() {
     this.setState({showButtons: !this.state.showButtons});
   }
@@ -58,13 +57,25 @@ class SimilarHome extends React.Component {
 
       <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
-        <Heart showButtons = {this.state.showButtons}/>
+      <ImgTopDiv>
 
-        <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
+      <Heart showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.state.heart}/>
 
-        <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
+      <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
 
-     </ImgDiv>
+      <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
+
+      </ImgTopDiv>
+
+      <ImgBottomDiv>
+
+      <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
+
+      </ImgBottomDiv>
+
+      </ImgDiv>
+
+
 
     );
   }
