@@ -10,14 +10,12 @@ class SimilarHome extends React.Component {
     super(props);
     this.state = {
       currentImgIdx: 0,
-      showButtons: false,
-      heart: false
+      showButtons: false
     };
 
     this.previousSlide = this.previousSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
-    this.heartClick = this.heartClick.bind(this);
 
   }
 
@@ -43,12 +41,8 @@ class SimilarHome extends React.Component {
     });
   }
 
-  //click heart inside the Modal
-  heartClick() {
-    this.setState({heart:!this.state.heart});
-  }
-
   handleToggle() {
+    event.preventDefault();
     this.setState({showButtons: !this.state.showButtons});
   }
 
@@ -59,11 +53,11 @@ class SimilarHome extends React.Component {
 
       <ImgTopDiv>
 
-      <Heart showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.state.heart}/>
+      <Heart name = 'firstHeart' showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.props.heart}/>
 
-      <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
+      <Arrow direction="left" handleSubmit={this.previousSlide} showButtons = {this.state.showButtons} />
 
-      <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
+      <Arrow direction="right" handleSubmit={this.nextSlide} showButtons = {this.state.showButtons} />
 
       </ImgTopDiv>
 
