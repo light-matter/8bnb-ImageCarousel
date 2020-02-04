@@ -2,21 +2,11 @@ import React, {Component} from 'react';
 import {DotsDiv1, DotsDiv2, DotSVG} from '../styles/DotsStyle.jsx';
 
 
-class Dots extends Component{
-
-  constructor(props){
-    super(props);
-    this.state = {
-      // currentIndex: 0
-    };
-  }
-
-  render() {
-
+const Dots = ({currentIndex,numOfDots}) => {
     const dotArray = [];
 
-    for(var i = 0; i < this.props.numOfDots; i++) {
-      dotArray.push(<DotSVG key = {i} dotIndex = {i} currentIndex = {this.props.currentIndex} numberOfDots = {this.props.numOfDots} viewBox="0 0 100 100" >
+    for(var i = 0; i <numOfDots; i++) {
+      dotArray.push(<DotSVG key = {i} dotIndex = {i} currentIndex = {currentIndex} numberOfDots = {numOfDots} viewBox="0 0 100 100" >
            <circle cx="50" cy="50" r="50"/>
         </DotSVG>)
     }
@@ -30,7 +20,6 @@ class Dots extends Component{
       </DotsDiv2>
       </DotsDiv1>
     )
-  }
 };
 
 export default Dots;
