@@ -30,8 +30,7 @@ class SimilarHomes extends Component{
 
   heartClick() {
     event.preventDefault();
-
-    this.setState({heart:!this.state.heart}, this.modalClick());
+    this.setState({heart:!this.state.heart});
   }
 
   previousList() {
