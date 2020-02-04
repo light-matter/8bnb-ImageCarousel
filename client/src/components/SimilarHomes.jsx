@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SimilarHome from './SimilarHome.jsx';
 import TextInfo from './TextInfo.jsx'
 import OuterArrow from './OuterArrow.jsx';
+import Modal from './Modal.jsx';
 import {RowDiv, ContainerDiv, OuterRightArrowDiv, OuterLeftArrowDiv} from '../styles/SimilarHomesStyle.jsx';
 
 class SimilarHomes extends Component{
@@ -13,11 +14,16 @@ class SimilarHomes extends Component{
       currentLastIndex: 2,
       showLeftButton: false,
       showRightButton: true,
+      showModal: false
     }
     this.previousList = this.previousList.bind(this);
     this.nextList = this.nextList.bind(this);
+    this.modalClick = this.modalClick.bind(this);
   }
 
+  modalClick() {
+    this.setState({showModal: !this.state.showModal});
+  }
 
   previousList() {
     if(this.state.currentFirstIndex > 0) {
@@ -56,7 +62,7 @@ class SimilarHomes extends Component{
 
       {this.props.similarHomes.slice(this.state.currentFirstIndex,this.state.currentLastIndex+1).map((similarHome, i) =>
         <ContainerDiv key={i}>
-        <SimilarHome images={similarHome.images}/>
+        <SimilarHome images={similarHome.images} modalClick = {this.modalClick}/>
         <TextInfo similarHome={similarHome}/>
         </ContainerDiv>
       )}
@@ -69,6 +75,7 @@ class SimilarHomes extends Component{
 
       </RowDiv>
 
+      <Modal showModal = {this.state.showModal} modalClick = {this.modalClick}/>
 
       </div>
 

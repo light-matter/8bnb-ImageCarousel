@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Arrow from './Arrow.jsx';
 import Heart from './Heart.jsx';
 import Dots from './Dots.jsx';
-import Modal from './Modal.jsx';
 import {ImgDiv, ImgTopDiv, ImgBottomDiv} from '../styles/SimilarHomeStyle.jsx';
 
 class SimilarHome extends React.Component {
@@ -19,7 +18,6 @@ class SimilarHome extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.heartClick = this.heartClick.bind(this);
-    this.modalClick = this.modalClick.bind(this);
 
   }
 
@@ -31,7 +29,6 @@ class SimilarHome extends React.Component {
 
     this.setState({
       currentImgIdx: index,
-      showModal: false
     });
   }
 
@@ -51,10 +48,6 @@ class SimilarHome extends React.Component {
     this.setState({heart:!this.state.heart});
   }
 
-  modalClick() {
-    this.setState({showModal: !this.state.showModal});
-  }
-
   handleToggle() {
     this.setState({showButtons: !this.state.showButtons});
   }
@@ -66,7 +59,7 @@ class SimilarHome extends React.Component {
 
       <ImgTopDiv>
 
-      <Heart showButtons = {this.state.showButtons} handleSubmit={this.modalClick} heartStatus={this.state.heart}/>
+      <Heart showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.state.heart}/>
 
       <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
 
@@ -79,9 +72,6 @@ class SimilarHome extends React.Component {
       <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
 
       </ImgBottomDiv>
-
-      <Modal showModal = {this.state.showModal} modalClick = {this.modalClick}>
-      </Modal>
 
       </ImgDiv>
 
