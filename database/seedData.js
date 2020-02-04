@@ -1,7 +1,9 @@
 const faker = require('faker');
 const mongoose = require('mongoose');
 var {Carousel} = require('./db.js');
-const {bodyArr} = require('./bodyData.js')
+const {bodyArr} = require('./bodyData.js');
+// const Promise = require('bluebird');
+// Promise.promisifyAll(mongoose);
 
 mongoose.connect('mongodb://localhost/homes', {useNewUrlParser: true, useUnifiedTopology:true});
 
@@ -52,10 +54,10 @@ const seedData = (num) => {
   }
 
   for(var i = 0; i < num; i++) {
-    var carousel = new Carousel({
-        listingId: i,
-        homes: similarHomes
-      })
+    var carousel = new Carousel ({
+      listingId: i,
+      homes: similarHomes
+    })
     carousel.save(err => {
       if(err) {
         console.log(err);
@@ -63,6 +65,7 @@ const seedData = (num) => {
         console.log('success');
       }
     })
+
   }
 
   }

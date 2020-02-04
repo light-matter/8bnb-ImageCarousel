@@ -15,16 +15,27 @@ app.use(bodyParser.json())
 //serves up files in the public folder
 app.use(express.static('public'));
 
-app.get('/homes', async(req, res) => {
-  try{
-      const homes = await getHomes()
-      console.log('response sent!')
-      res.status(200).send(homes);
-    }
-  catch(err) {
+// app.get('/homes', async(req, res) => {
+//   try{
+//       const homes = await getHomes()
+//       console.log('response sent!')
+//       res.status(200).send(homes);
+//     }
+//   catch(err) {
+//       console.log(err);
+//       res.status(500).send();
+//     }
+// })
+app.get('/homes', (req,res) => {
+  getHomes((err, homes) => {
+    if(err) {
       console.log(err);
       res.status(500).send();
+    } else {
+      console.log('get homes response sent');
+      res.status(200).send(homes);
     }
+  })
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
