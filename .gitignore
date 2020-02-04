@@ -24,3 +24,5 @@ coverage
 build/
 dist/
 
+#React Style components
+client/src/styles
