@@ -23,7 +23,7 @@ const ModalDiv = styled.div`
   left: 50%;
   transform: translate(-50%,-50%);
 `
-const Modal = ({showModal, modalClick, children}) => {
+const Modal = ({showModal, modalClick, children, heartClick, heart}) => {
 
   return(
 
@@ -31,7 +31,7 @@ const Modal = ({showModal, modalClick, children}) => {
       <ModalDiv>
         <h1> close </h1>
         <button onClick = {modalClick}> Close </button>
-        <HeartModal/>
+        <HeartModal handleSubmit={heartClick} heart={heart}/>
       </ModalDiv>
     </BackgroundDiv>
 
