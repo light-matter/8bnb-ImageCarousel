@@ -44,6 +44,7 @@ class SimilarHomes extends Component{
 
   render() {
     return(
+      <div>
 
       <RowDiv>
 
@@ -67,6 +68,9 @@ class SimilarHomes extends Component{
         </OuterRightArrowDiv>
 
       </RowDiv>
+
+
+      </div>
 
     )
   }

@@ -19,6 +19,7 @@ class SimilarHome extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.heartClick = this.heartClick.bind(this);
+    this.modalClick = this.modalClick.bind(this);
 
   }
 
@@ -45,11 +46,13 @@ class SimilarHome extends React.Component {
     });
   }
 
+  //click heart inside the Modal
   heartClick() {
-    this.setState({
-      heart:!this.state.heart,
-      showModal: !this.state.showModal
-    });
+    this.setState({heart:!this.state.heart});
+  }
+
+  modalClick() {
+    this.setState({showModal: !this.state.showModal});
   }
 
   handleToggle() {
@@ -61,28 +64,28 @@ class SimilarHome extends React.Component {
 
       <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
-        <ImgTopDiv>
+      <ImgTopDiv>
 
-        <Heart showButtons = {this.state.showButtons} handleSubmit={this.heartClick} heartStatus={this.state.heart}/>
+      <Heart showButtons = {this.state.showButtons} handleSubmit={this.modalClick} heartStatus={this.state.heart}/>
 
-        <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
+      <Arrow direction="left" handleSubmit={this.previousSlide} showButtons={this.state.showButtons} />
 
-        <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
+      <Arrow direction="right" handleSubmit={this.nextSlide} showButtons={this.state.showButtons} />
 
-        </ImgTopDiv>
+      </ImgTopDiv>
 
-        <ImgBottomDiv>
+      <ImgBottomDiv>
 
-        <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
+      <Dots numOfDots = {this.props.images.length} previousSlide = {this.previousSlide} nextSlide = {this.nextSlide} currentIndex = {this.state.currentImgIdx}/>
 
-        </ImgBottomDiv>
+      </ImgBottomDiv>
 
-        <Modal showModal = {this.state.showModal} heartClick = {this.heartClick}>
-          <h2> Modal Component </h2>
-          <p> random text </p>
-        </Modal>
+      <Modal showModal = {this.state.showModal} heartClick = {this.heartClick}>
+      </Modal>
 
       </ImgDiv>
+
+
 
     );
   }
