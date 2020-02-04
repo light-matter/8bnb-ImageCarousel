@@ -80,7 +80,7 @@ class SimilarHome extends React.Component {
 
       </ImgBottomDiv>
 
-      <Modal showModal = {this.state.showModal} heartClick = {this.heartClick}>
+      <Modal showModal = {this.state.showModal} modalClick = {this.modalClick}>
       </Modal>
 
       </ImgDiv>
