@@ -39,6 +39,7 @@ class SimilarHome extends React.Component {
     this.setState({
       currentImgIdx: index,
     });
+
   }
 
   handleToggle() {
@@ -49,7 +50,7 @@ class SimilarHome extends React.Component {
   render() {
     return (
 
-      <ImgDiv image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
+      <ImgDiv id = "slide" image={this.props.images[this.state.currentImgIdx]} onMouseEnter={this.handleToggle} onMouseLeave = {this.handleToggle}>
 
       <ImgTopDiv>
 
