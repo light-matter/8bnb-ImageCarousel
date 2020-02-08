@@ -13,15 +13,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       homes: [],
+      listingId: 0
     };
   }
 
   getHomes() {
-    axios.get('/homes')
+    axios.get('http://localhost:3001/homes')
       .then((response) => {
         console.log(response.data[1].homes);
         this.setState({
-          homes: response.data[2].homes,
+          homes: response.data[0].homes,
         });
       })
       .catch((error) => {

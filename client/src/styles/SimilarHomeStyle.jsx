@@ -8,9 +8,6 @@ export const ImgDiv = styled.div`
   margin-left: 10px;
   position: relative;
   border-radius: 2%;
-  transition-delay: 0.25s;
-  animation: ${slide} 0.5s forwards;
-  animation-delay: 2s;
 `;
 
 const slide = keyframes`

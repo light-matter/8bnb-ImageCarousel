@@ -19,6 +19,7 @@
     "axios": "^0.19.2",
     "babel-jest": "^25.1.0",
     "bluebird": "^3.7.2",
+    "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.8.10",

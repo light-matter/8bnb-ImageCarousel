@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const {getHomes} = require('../database/db.js');
 const regeneratorRuntime = require('regenerator-runtime');
-const app = express()
-const port = 3000
+const app = express();
+const port = 3001;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,6 +27,8 @@ app.use(express.static('public'));
 //     }
 // })
 app.get('/homes', (req,res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   getHomes((err, homes) => {
     if(err) {
       console.log(err);
