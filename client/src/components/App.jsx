@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   getHomes() {
-    axios.get('http://localhost:3001/homes')
+    axios.get('/homes')
       .then((response) => {
         console.log(response.data[1].homes);
         this.setState({
