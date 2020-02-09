@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const {getHomes} = require('../database/db.js');
 const regeneratorRuntime = require('regenerator-runtime');
 const app = express();
-const port = 3001;
+const port = 3004;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
