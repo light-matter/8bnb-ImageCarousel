@@ -23,14 +23,20 @@ const ModalDiv = styled.div`
   left: 50%;
   transform: translate(-50%,-50%);
 `
-const Modal = ({showModal, modalClick, children, heartClick, heart}) => {
+const CloseButton = styled.img`
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+`
+const Modal = ({showModal, modalClick, heartClick, heart}) => {
 
   return(
 
     <BackgroundDiv showModal = {showModal}>
       <ModalDiv>
-        <h1> close </h1>
-        <button onClick = {modalClick}> Close </button>
+        <CloseButton onClick = {modalClick} src = 'https://8bnb-homes.s3-us-west-1.amazonaws.com/closeButton.png' alt = 'closeButton'/>
         <HeartModal handleSubmit={heartClick} heart={heart}/>
       </ModalDiv>
     </BackgroundDiv>
