@@ -54,7 +54,7 @@ class SimilarHome extends React.Component {
 
       <ImgTopDiv>
 
-      <Heart name = 'firstHeart' showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.props.heart}/>
+      <Heart name = 'firstHeart' showButtons = {this.state.showButtons} handleSubmit={this.props.modalClick} heartStatus={this.props.heart} index= {this.state.currentImgIdx}/>
 
       <Arrow direction="left" handleSubmit={this.previousSlide} showButtons = {this.state.showButtons} />
 
